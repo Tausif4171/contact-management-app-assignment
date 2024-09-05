@@ -27,7 +27,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, windowWidth }) => {
     <div
       className={`${
         windowWidth < 768
-          ? `fixed top-0 left-0 h-full bg-white shadow-lg transition-transform duration-300 ease-in-out z-40 ${
+          ? `fixed top-0 left-0 z-40 h-full bg-white shadow-lg transition-transform duration-300 ease-in-out  ${
               isOpen ? "translate-x-0" : "-translate-x-full"
             } w-[250px]`
           : "relative h-full bg-white w-full"

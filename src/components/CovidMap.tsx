@@ -33,7 +33,7 @@ const CovidMap: React.FC = () => {
   const defaultCenter: LatLngExpression = [20, 0]; // Default center position
 
   return (
-    <div className="p-4 bg-white rounded-lg shadow-md">
+    <div className="p-4 bg-white rounded-lg shadow-md relative z-10">
       <MapContainer
         center={defaultCenter}
         zoom={2}
