@@ -53,7 +53,7 @@ const Layout: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
   }, [isSidebarOpen, windowWidth]);
 
   return (
-    <div className="mx-auto h-[100vh] w-[100%] relative">
+    <div className="h-screen w-full flex flex-col">
       <Header />
 
       {/* Toggle button for mobile view */}
@@ -67,16 +67,14 @@ const Layout: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
         </button>
       )}
 
-      <div
-        className={`grid ${windowWidth >= 768 ? "grid-cols-[1fr_5fr]" : ""}`}
-      >
+      <div className="flex flex-grow">
         {/* Sidebar */}
         <div ref={sidebarRef}>
           <Sidebar isOpen={isSidebarOpen} windowWidth={windowWidth} />
         </div>
 
         {/* Main content */}
-        <div className="w-full">{children}</div>
+        <main className="flex-grow overflow-auto bg-gray-100">{children}</main>
       </div>
     </div>
   );
